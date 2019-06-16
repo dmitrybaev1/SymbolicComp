@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    public enum Func { Plus,Minus,Multiply,Power}
     public interface IExprVisitor<T>
     {
         T VisitApply(ApplyExpr apply);
@@ -26,13 +27,13 @@ namespace ConsoleApp1
 
     public class ApplyExpr : Expr
     {
-        public Expr Head { get; private set; }
+        public Func Head { get; private set; }
         public ReadOnlyCollection<Expr> Args { get; private set; }
 
-        public ApplyExpr(Expr head, params Expr[] args)
+        public ApplyExpr(Func head, params Expr[] args)
             : this(head, (IEnumerable<Expr>)args) { }
 
-        public ApplyExpr(Expr head, IEnumerable<Expr> args)
+        public ApplyExpr(Func head, IEnumerable<Expr> args)
         {
             this.Head = head;
             this.Args = new ReadOnlyCollection<Expr>(args.ToArray());
