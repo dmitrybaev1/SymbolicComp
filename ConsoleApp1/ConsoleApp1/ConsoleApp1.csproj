@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConcreteVisitor.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="KnownExpr.cs" />
+    <Compile Include="SymbolVisitor.cs" />
     <Compile Include="Expr.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
